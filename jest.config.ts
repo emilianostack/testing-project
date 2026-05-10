@@ -13,7 +13,16 @@ const config: Config = {
   },
   setupFiles: ["<rootDir>/tests/setup.ts"],
   globalSetup: "<rootDir>/tests/globalSetup.ts",
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "mjs", "cjs", "json", "node"],
+  moduleFileExtensions: [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "mjs",
+    "cjs",
+    "json",
+    "node",
+  ],
 };
 
 const nextConfig = createJestConfig(config);
@@ -26,7 +35,10 @@ export default async function jestConfig(): Promise<Config> {
     // Add @prisma/client/runtime to the transform allowlist so .mjs WASM files are processed
     transformIgnorePatterns: defaultPatterns.map((p) =>
       p.startsWith("/node_modules/")
-        ? p.replace("/node_modules/(?!", "/node_modules/(?!(@prisma/client/runtime)|")
+        ? p.replace(
+            "/node_modules/(?!",
+            "/node_modules/(?!(@prisma/client/runtime)|",
+          )
         : p,
     ),
   };

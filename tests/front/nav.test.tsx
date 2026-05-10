@@ -47,13 +47,19 @@ describe("Nav", () => {
 
   it("link home está ativo por padrão", () => {
     render(<Nav />);
-    expect(screen.getByTestId("nav-home").className).toContain("bg-(--surface)");
+    expect(screen.getByTestId("nav-home").className).toContain(
+      "bg-(--surface)",
+    );
   });
 
   it("links inativos têm fundo transparente", () => {
     render(<Nav />);
-    expect(screen.getByTestId("nav-categoria").className).toContain("bg-transparent");
-    expect(screen.getByTestId("nav-livro").className).toContain("bg-transparent");
+    expect(screen.getByTestId("nav-categoria").className).toContain(
+      "bg-transparent",
+    );
+    expect(screen.getByTestId("nav-livro").className).toContain(
+      "bg-transparent",
+    );
   });
 
   it("configura IntersectionObserver no mount", () => {
@@ -84,7 +90,10 @@ describe("Nav", () => {
   it("links têm href com hash correto", () => {
     render(<Nav />);
     expect(screen.getByTestId("nav-home")).toHaveAttribute("href", "#home");
-    expect(screen.getByTestId("nav-categoria")).toHaveAttribute("href", "#categoria");
+    expect(screen.getByTestId("nav-categoria")).toHaveAttribute(
+      "href",
+      "#categoria",
+    );
     expect(screen.getByTestId("nav-livro")).toHaveAttribute("href", "#livro");
   });
 });

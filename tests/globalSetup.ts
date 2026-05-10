@@ -16,7 +16,10 @@ export default async function globalSetup() {
     // .env não encontrado, usa variáveis do ambiente
   }
 
-  const testUrl = env["DATABASE_URL_TEST"] ?? process.env.DATABASE_URL_TEST ?? "file:./test.db";
+  const testUrl =
+    env["DATABASE_URL_TEST"] ??
+    process.env.DATABASE_URL_TEST ??
+    "file:./test.db";
 
   execSync(`${process.execPath} node_modules/.bin/prisma db push`, {
     env: { ...process.env, ...env, DATABASE_URL: testUrl },
