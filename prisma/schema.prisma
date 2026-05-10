@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Categoria {
+  id     Int     @id @default(autoincrement())
+  codigo Int     @unique
+  nome   String
+  livros Livro[]
+}
+
+model Livro {
+  id          Int       @id @default(autoincrement())
+  codigo      Int       @unique
+  titulo      String
+  autor       String
+  categoriaId Int
+  categoria   Categoria @relation(fields: [categoriaId], references: [id])
+}

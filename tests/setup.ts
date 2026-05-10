@@ -1,0 +1,2 @@
+process.env.DATABASE_URL =
+  process.env.DATABASE_URL_TEST ?? "file:./test.db";
