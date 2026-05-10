@@ -6,22 +6,22 @@ html {
 }
 
 :root {
-  --bg:          oklch(0.16 0.006 60);
-  --bg-2:        oklch(0.20 0.007 60);
-  --surface:     oklch(0.23 0.008 60);
-  --surface-2:   oklch(0.27 0.009 60);
-  --line:        oklch(0.32 0.010 60);
+  --bg: oklch(0.16 0.006 60);
+  --bg-2: oklch(0.2 0.007 60);
+  --surface: oklch(0.23 0.008 60);
+  --surface-2: oklch(0.27 0.009 60);
+  --line: oklch(0.32 0.01 60);
   --line-strong: oklch(0.42 0.012 60);
-  --text:        oklch(0.96 0.005 80);
-  --text-dim:    oklch(0.72 0.008 70);
-  --text-faint:  oklch(0.55 0.010 70);
-  --accent:      oklch(0.78 0.13 155);
-  --accent-dim:  oklch(0.55 0.10 155);
-  --accent-soft: oklch(0.30 0.05 155);
-  --danger:      oklch(0.70 0.16 25);
-  --warn:        oklch(0.82 0.13 80);
-  --radius:      6px;
-  --radius-lg:   10px;
+  --text: oklch(0.96 0.005 80);
+  --text-dim: oklch(0.72 0.008 70);
+  --text-faint: oklch(0.55 0.01 70);
+  --accent: oklch(0.78 0.13 155);
+  --accent-dim: oklch(0.55 0.1 155);
+  --accent-soft: oklch(0.3 0.05 155);
+  --danger: oklch(0.7 0.16 25);
+  --warn: oklch(0.82 0.13 80);
+  --radius: 6px;
+  --radius-lg: 10px;
 }
 
 @theme inline {
@@ -44,8 +44,16 @@ body::before {
   inset: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(1200px 600px at 90% -10%, oklch(0.30 0.04 155 / 0.18), transparent 60%),
-    radial-gradient(900px 500px at -10% 110%, oklch(0.25 0.03 280 / 0.15), transparent 60%);
+    radial-gradient(
+      1200px 600px at 90% -10%,
+      oklch(0.3 0.04 155 / 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at -10% 110%,
+      oklch(0.25 0.03 280 / 0.15),
+      transparent 60%
+    );
   z-index: 0;
 }
 
