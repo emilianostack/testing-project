@@ -1,6 +1,0 @@
-node_modules
-.next
-generated
-*.db
-.env
-.git
