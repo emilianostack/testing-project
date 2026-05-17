@@ -5,11 +5,16 @@ import { PrismaLibSql } from "@prisma/adapter-libsql";
 function createPrismaClient() {
   const url =
     process.env.NODE_ENV === "production"
-      ? (process.env.DATABASE_URL_PROD ?? process.env.DATABASE_URL ?? "file:./dev.db")
+      ? (process.env.DATABASE_URL_PROD ??
+        process.env.DATABASE_URL ??
+        "file:./dev.db")
       : (process.env.DATABASE_URL ?? "file:./dev.db");
 
   if (url.startsWith("libsql://") || url.startsWith("https://")) {
-    const adapter = new PrismaLibSql({ url, authToken: process.env.TURSO_AUTH_TOKEN });
+    const adapter = new PrismaLibSql({
+      url,
+      authToken: process.env.TURSO_AUTH_TOKEN,
+    });
     return new PrismaClient({ adapter });
   }
 
