@@ -22,3 +22,6 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          DATABASE_URL_PROD: ${{ secrets.DATABASE_URL_PROD }}
+          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
